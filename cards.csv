@@ -1,0 +1,9 @@
+name,type,cost,block,damage,ability_text
+Drill,drill,1,1,0,"Stays in place | Spend 1 energy | Give all future attacks +1 Damage"
+Punchy Guy,character,0,1,1,"Your turn: | Spend 1 Energy Draw 1"
+Blocky Guy,character,0,1,1,"You may put the first card of damage you take each turn into your hand"
+Punch,attack,1,1,2,""
+Kick,attack,2,2,2,"If this card blocks more damage than what remains, inflict the difference to the opponent as free damage."
+Reversal,attack,1,2,1,"If this block prevents any remaining damage put it in your hand"
+Uppercut,attack,2,1,3,""
+Planning,tactic,1,1,0,"Reorganize the top 3 cards of your deck."
