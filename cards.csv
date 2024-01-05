@@ -1,9 +1,17 @@
-name,type,cost,block,damage,ability_text
-Drill,drill,1,1,0,"Stays in place | Spend 1 energy | Give all future attacks +1 Damage"
-Punchy Guy,character,0,1,1,"Your turn: | Spend 1 Energy Draw 1"
-Blocky Guy,character,0,1,1,"You may put the first card of damage you take each turn into your hand"
-Punch,attack,1,1,2,""
-Kick,attack,2,2,2,"If this card blocks more damage than what remains, inflict the difference to the opponent as free damage."
-Reversal,attack,1,2,1,"If this block prevents any remaining damage put it in your hand"
-Uppercut,attack,2,1,3,""
-Planning,tactic,1,1,0,"Reorganize the top 3 cards of your deck."
+name,type,cost,block,damage,ability_text,ability_keyword
+Focusing Drill,drill,1,1,0,Spend 1: Give 1 bonus damage to all your attacks this round.,Action
+Punchy Guy,character,0,1,1,Spend 1: Draw 1 card,Action
+Blocky Guy,character,0,1,1,"When you reveal a card for damage: If this is the first card revealed this round, you may put it into your hand instead of discarding it.",Reaction
+Punch,attack,1,1,2,"",
+Kick,attack,2,2,2,"If this card blocks more damage than what remains, inflict the difference to the opponent as free damage.",Defense
+Reversal,attack,1,2,1,If this block prevents any remaining damage put it in your hand instead of discarding it.,Defense
+Uppercut,attack,2,1,3,"",
+Planning,tactic,1,1,0,"Reorganize the top 3 cards of your deck.",
+Defense Drill,drill,1,3,0,"When you reveal a card for damage: pay 1 to double the block value of the revealed card, do not discard this drill.",Reaction
+Perfect Defense Drill,drill,2,1,0,When you are attacked: Take no damage from that attack.,Reaction
+Unstoppable Force Drill,drill,2,0,0,When you play an attack: double the base damage of that attack.,Reaction
+Combat Form Drill,drill,1,0,0,Spend 1: Perform a 2 damage attack.,Action
+Stunning Blow,attack,1,2,2,"If this card does more than 1 card of damage, your opponent cannot play an attack from their hand on the next turn.",
+Taunting Strike,attack,2,1,1,Your opponent may not use their drills until your next turn.,
+Push the Advantage,tactic,2,2,0,"If you dealt life cards of damage on your last turn, draw 2 cards and gain 2 energy.",
+Come Up With a Plan,tactic,1,1,0,"If you took damage on your opponent's last turn, reveal the top 3 cards of your deck and put any drills revealed into your hand. Put the rest on the bottom of your deck.",
