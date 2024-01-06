@@ -4,26 +4,17 @@ A game is a battle between two characters.
 Each player brings a character and a deck to play.
 The object of the game is to remove every card from your opponent's deck.
 
+## Setup
+
 1. Place your character in the center of your play space and the deck to one side.
 2. Draw initial hand and decide if you would like to mulligan.
 3. A mulligan is performed by selecting any number of cards in your hand
    and putting them on the bottom of your deck then drawing that many cards.
-4. Then without looking at them put the top 3 cards of your deck into a separate pile next to your deck.
-   This pile is your energy.
-5. Choose the active player. Active player plays first on a round and switches every round.
+4. Choose the active player. Active player plays first on a round and switches every round.
 
 You're ready to play.
 
 ## Concepts
-
-* Action: Takes a turn during the combat step.
-* Attack: A card that can be played as an action. Deals damage, may have a one time effect.
-* Defense: An effect that activates before a card is discarded as damage.
-* Drill: A card played during the training phase. Provides an Ongoing, Reaction, or Attack that can be used on 
-  future turns.
-* Ongoing: An effect that lasts. Will tell you when it ends.
-* Reaction: Responds to a specific event. Has one time use effect.
-* Tactic: A card that can be played as an action. Has a one time effect and is discarded.
 
 ### Dealing Damage
 
@@ -32,10 +23,10 @@ The player that caused the damage is considered the Attacking Player.
 
 Follow the following steps:
 
-1. Reduce the damage amount by 1 and flip the top card of their deck into their discard pile.
+1. Flip the top card of their deck into their discard pile.
 2. The Attacking Player may play reactions "When an opponent reveals a card for damage."
 3. That Blocking Player may play reactions "When you reveal a card for damage."
-4. Look in the top right corner of the card for defense icons, reduce the remaining damage by the number there.
+4. Reduce damage by the combination of the base Defense value + your character defense value + any bonus defense.
 5. If the defense icons exactly match the remaining damage, put the card in your hand. (Perfect Defense)
 6. If the defense card has a defense trigger, resolve it now.
 7. Discard the card as damage.
@@ -60,13 +51,25 @@ A character represents the player. Each character has:
 
 Character abilities may only be used once per round.
 
+### Definitions
+
+* Action: Takes a turn during the combat step.
+* Attack: A card that can be played as an action. Deals damage, may have a one time effect.
+* Defense: An effect that activates before a card is discarded as damage.
+* Drill: A card played during the training phase. Provides an Ongoing, Reaction, or Attack that can be used on 
+  future turns.
+* Ongoing: An effect that lasts. Will tell you when it ends.
+* Reaction: Responds to a specific event. Has one time use effect.
+* Tactic: A card that can be played as an action. Has a one time effect and is discarded.
+
 ## Round Structure
 
 A round is broken into 3 steps:
 
 1. Ready
 2. Combat
-3. End of Round
+3. Training
+4. End of Round
 
 ### Ready Step
 
@@ -75,8 +78,9 @@ We'll formalize how much energy later.
 Also character levels are a future concern,
 as well as "at the start of turn" effects.
 
-1. Power up by putting cards from the top of your deck into your energy pile.
-2. Draw two cards.
+1. Draw two cards.
+2. Power up by putting 3 cards + 1 card per drill from the top of your deck into your energy pile
+3. Perform "At start of turn" abilities
 
 ### Combat Step
 
@@ -102,7 +106,7 @@ No matter what kind of attack it is, you follow these steps:
 2. You may activate a reaction. (When you)
 3. Your opponent may activate a reaction. (When your opponent)
 4. If the card has an effect, do what it says.
-5. Deal damage equal to the arrows in the bottom right corner.
+5. Deal damage equal to the base damage of the attack + your character attack bonus + any additional bonus damage.
 
 * Reactions phrases: "activate an attack", "activate an action"
 * If this is a Character Attack: "activate a character attack", "activate a character action"
@@ -170,20 +174,3 @@ Attack: Pay the associated costs to perform an attack.
 1. Discard down to hand size.
 2. End of round effects
 3. The active player passes to the other player.
-
-## Snippets of possible mechanics for the future
-
-1. Character levels: Stack of cards, get more powerful as the fight goes on.
-2. Attack types:
-   * One deals damage to "energy" and then life, but tends to cost less.
-   * One deals damage to the life deck directly.
-3. Blocks? Use left/right/center or high/low/neutral on attacks and blocks. Fighting game mechanics get?
-4. Mini mulligan every turn IE draw 6, put two into your energy pile or something.
-   * Tie this to character level, so you draw more cards to tune and get more energy as the game goes.
-5. Deck build limitations, needs combat styles, more robust characters. See Star Wars Unlimited and The Spoils for ideas.
-6. Regen
-7. Allies
-8. More subtle damage: Flips defend 0, only defense icons. This makes for some silly design space like 0 life cards of damage.
-9. Regarding 1: Cards that can only be played at higher levels
-10. Reaction cards: Follow rules of printed reactions
-11. Blocks: Reactions that respond to attacks
