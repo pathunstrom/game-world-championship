@@ -19,6 +19,7 @@ Attack/Tactic Card mechanics that don't exist, but should:
 * Card tuning
 * Energy Ramping
 * Fireball/Spirit Bomb
+* Previous/next card type matters
 
 Player Abilities:
 
