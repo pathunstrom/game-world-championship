@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+authors = [
+    {name = "Piper Thunstrom", email = "pathunstrom@gmail.com"}
+]
+dependencies = [
+    "tomlkit"
+]
+description = "A csv generator for card games."
+name = "card-generator"
+readme = "README.md"
+requires-python = ">= 3.11"
+version = "2024.0.0"
+
+[project.optional-dependencies]
+test = ["pytest"]
+dev = ["ruff"]
+
+[project.scripts]
+cardgen = "card_generator:cli.run_cli"

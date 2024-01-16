@@ -1,0 +1,83 @@
+[generator]
+version = "0.1.0"
+
+[budget]
+attack_base = 2
+defense_base = 1
+budget_per_energy = 2
+max_cost = 5
+max_defense = 5
+max_attack = 12
+
+[costs]
+attack_additional = 1
+attack_removed = -1
+defense_additional = 1
+defense_removed = -1
+
+[[general-ability]]
+name = "gain energy"
+cost = 2
+text = "gain {effect_scalar} energy"
+scalar_default = 2
+scalar_increase_modifier = -1
+scalar_decrease_modifier = 0.5
+
+[[general-ability]]
+name = "stun"
+text = "your opponent can't use {modifier} on their next combat turn."
+cost = 2
+modifiers = ["Tactic cards", "Attack cards", "Drill Attacks", "Drill actions", "Character attacks", "Character actions"]
+
+[[general-ability-modifier]]
+name = "damage_dealt_last_turn"
+text = "If you dealt damage last turn, {ability_text}"
+cost = -1
+
+[[attack-ability]]
+name = "piercing"
+text = "when applying damage from this attack, reduce the base defense value by 1 of each revealed life card."
+cost = 2
+
+[[attack-ability-modifier]]
+name = "damage_dealt_this_turn"
+text = "If this attack does at least {modifier_scalar} damage to your opponent, {ability_text}"
+cost = -1
+scalar_default_value = 3
+scalar_increase_cost = 1
+scalar_decrease_cost = -1
+
+[[defense-ability]]
+name = "remainder_counter_blow"
+cost = 1
+text = "deal {ability_scalar} damage for each remaining defense as damage to your opponent. (This does not count as an attack)."
+scalar_default_value = 1
+scalar_increase_cost = 2
+scalar_decrease_cost = 0
+valid_modifiers = ["more_damage"]
+
+[[defense-ability]]
+name = "defense_to_hand"
+power_budget_modifier = 1
+text = "Put this card into your hand."
+valid_modifiers = ["any_damage", "more_damage"]
+
+[[defense-modifier]]
+name = "any_damage"
+text = "If this card blocks any damage, {ability_text}"
+power_budget_modifier = 0
+
+[[defense-modifier]]
+name = "more_damage"
+text = "If this card blocks more damage than remains, {ability_text}"
+power_budget_modifier = 1
+
+[[defense-modifier]]
+name = "perfect_defense"
+text = "If this card is a perfect defense, {ability_text}"
+power_budget_modifier = -1
+
+[[play-limitation]]
+name = "limit_damage_dealt_last_turn"
+text = "You may only play this card if you dealt damage with an attack last turn."
+cost = -1
