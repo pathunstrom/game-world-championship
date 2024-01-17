@@ -3,20 +3,7 @@ from dataclasses import dataclass
 from functools import lru_cache
 from typing import Iterator, Sequence
 
-
-@dataclass(frozen=True)
-class CostStep:
-    """
-    A cost step is a starting value, and a cost per point.
-
-    All sequences of CostSteps should start at (0, x) where x is the basic
-    value of the stat.
-    The value field should strictly increase as your progress through the
-    sequence.
-    """
-
-    value: int
-    cost: int
+import card_generator.base as base
 
 
 @dataclass(frozen=True)
@@ -28,7 +15,7 @@ class Stat:
     """
 
     name: str
-    cost_schedule: tuple[CostStep]
+    cost_schedule: tuple[base.CostStep]
 
 
 @dataclass
@@ -45,7 +32,7 @@ class GeneratedStats:
 def generate_stat_distribution(
     stat_configuration: Sequence[Stat], remaining_budget: float | int
 ) -> Iterator[GeneratedStats]:
-    for generated_stat in _generate_stat_splits(stat_configuration, remaining_budget):
+    for generated_stat in _generate_stat_splits(tuple(stat_configuration), remaining_budget):
         if sum(generated_stat.values.values()):
             yield generated_stat
 

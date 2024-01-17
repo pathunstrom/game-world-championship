@@ -1,14 +1,13 @@
 import pytest
-from itertools import zip_longest
 
-from card_generator import stats
+from card_generator import stats, base
 
 
 stat_distribution_test_data = [
     pytest.param(  # 0 budget with no free points returns 0 dicts.
         (
-            stats.Stat(name="attack", cost_schedule=(stats.CostStep(0, 1),)),
-            stats.Stat(name="defense", cost_schedule=(stats.CostStep(0, 1),)),
+            stats.Stat(name="attack", cost_schedule=(base.CostStep(0, 1),)),
+            stats.Stat(name="defense", cost_schedule=(base.CostStep(0, 1),)),
         ),
         0,
         [],
@@ -17,8 +16,8 @@ stat_distribution_test_data = [
     ),
     pytest.param(  # 1 budget with equal costs and two stats should return 1, 0 and 0, 1
         (
-            stats.Stat(name="attack", cost_schedule=(stats.CostStep(0, 1),)),
-            stats.Stat(name="defense", cost_schedule=(stats.CostStep(0, 1),)),
+            stats.Stat(name="attack", cost_schedule=(base.CostStep(0, 1),)),
+            stats.Stat(name="defense", cost_schedule=(base.CostStep(0, 1),)),
         ),
         1,
         [(0, 1), (1, 0)],
@@ -27,9 +26,9 @@ stat_distribution_test_data = [
     ),
     pytest.param(
         (
-            stats.Stat(name="attack", cost_schedule=(stats.CostStep(0, 1),)),
-            stats.Stat(name="defense", cost_schedule=(stats.CostStep(0, 1),)),
-            stats.Stat(name="focus", cost_schedule=(stats.CostStep(0, 1),)),
+            stats.Stat(name="attack", cost_schedule=(base.CostStep(0, 1),)),
+            stats.Stat(name="defense", cost_schedule=(base.CostStep(0, 1),)),
+            stats.Stat(name="focus", cost_schedule=(base.CostStep(0, 1),)),
         ),
         2,
         [(0, 0, 2), (0, 1, 1), (0, 2, 0), (1, 0, 1), (1, 1, 0), (2, 0, 0)],
@@ -44,7 +43,7 @@ stat_distribution_test_data = [
     stat_distribution_test_data,
 )
 def test_stat_distribution_generation(
-    stat_configuration, remaining_budget, expected_values, expected_spend
+    stat_configuration: tuple[stats.Stat], remaining_budget: float | int, expected_values: list[tuple], expected_spend: int
 ):
     expected_output = [
         {k: values[i] for i, k in enumerate(stat.name for stat in stat_configuration)}
