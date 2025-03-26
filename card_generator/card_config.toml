@@ -1,0 +1,16 @@
+[generator]
+version = "0.1.0"
+
+[budget]
+attack_base = 2
+budget_per_energy = 2
+defense_base = 1
+max_cost = 5
+max_defense = 5
+max_attack = 12
+
+[costs]
+attack_additional = 1
+attack_removed = -1
+defense_additional = 1
+defense_removed = -1
