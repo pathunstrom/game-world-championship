@@ -18,30 +18,31 @@ FONT=Arial,14,F,#000000,#FFFFFF
 ;Field: TYPE
 TEXT="1-{(TYPE)}",[TYPE],<FRAME_TYPE>
 
-IF=[type]=="attack"
-    FONT=Arial,18,F,#000000,#FFFFFF
-    ;Field: COST
-    TEXT="1-{(COST)}",[COST],<FRAME_COST>
-    TEXT="1-{(ATTACK)}","A",5%,70%,30%,15%
-    ;Field: ATTACK
-    TEXT="1-{(ATTACK)}",[ATTACK],<FRAME_ATTACK>
-    TEXT="1-{(DEFENSE)}","D",65%,70%,30%,15%
-    ;Field: DEFENSE
-    TEXT="1-{(DEFENSE)}",[DEFENSE],<FRAME_DEFENSE>
-ELSEIF=[type]=="lesson"
-    FONT=Arial,18,F,#000000,#FFFFFF
-    ;Field: CHARGE
-    TEXT=,"CHARGE:",5%,25%,70%,15%
-    TEXT="1-{(CHARGE)}",[CHARGE],<FRAME_CHARGE>
-    ;Field: SEE
-    TEXT=,"SEE:",5%,45%,70%,15%
-    TEXT="1-{(SEE)}",[SEE],<FRAME_SEE>
-    ;Field: KEEP
-    TEXT=,"SEE:",5%,65%,70%,15%
-    TEXT="1-{(KEEP)}",[KEEP],<FRAME_KEEP>
-ELSE
 
-ENDIF
+SELECT=[type]
+    CASE="attack"
+        FONT=Arial,18,F,#000000,#FFFFFF
+        ;Field: COST
+        TEXT="1-{(COST)}",[COST],<FRAME_COST>
+        CIRCLE="1-{(COST))}",<FRAME_COST>,#000000,EMPTY,0.05
+        TEXT="1-{(ATTACK)}","A",5%,70%,30%,15%
+        ;Field: ATTACK
+        TEXT="1-{(ATTACK)}",[ATTACK],<FRAME_ATTACK>
+        TEXT="1-{(DEFENSE)}","D",65%,70%,30%,15%
+        ;Field: DEFENSE
+        TEXT="1-{(DEFENSE)}",[DEFENSE],<FRAME_DEFENSE>
+    CASE="lesson"
+        FONT=Arial,18,F,#000000,#FFFFFF
+        ;Field: CHARGE
+        TEXT=,"CHARGE:",5%,25%,70%,15%
+        TEXT="1-{(CHARGE)}",[CHARGE],<FRAME_CHARGE>
+        ;Field: SEE
+        TEXT=,"SEE:",5%,45%,70%,15%
+        TEXT="1-{(SEE)}",[SEE],<FRAME_SEE>
+        ;Field: KEEP
+        TEXT=,"KEEP:",5%,65%,70%,15%
+        TEXT="1-{(KEEP)}",[KEEP],<FRAME_KEEP>
+ENDSELECT
 
 FONT=Arial,14,F,#000000,#FFFFFF
 TEXT=70,"CONCEALED",0,0,100%,100%
