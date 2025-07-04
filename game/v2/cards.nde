@@ -1,0 +1,50 @@
+LINKMULTI=test_deck_count
+LINK=C:\Users\pathu\src\pathunstrom\game-world-championship\game\v2\cards.csv
+
+<FRAME_NAME>=25%, 5%, 70%,15%
+<FRAME_TYPE>=35%, 85%,30%,10%
+
+<FRAME_COST>= 5%,5%,20%,15%
+<FRAME_ATTACK>=5%,85%,30%,15%
+<FRAME_DEFENSE>=65%,85%,30%,15%
+
+<FRAME_CHARGE>=75%,25%,20%,15%
+<FRAME_SEE>=75%,45%,20%,15%
+<FRAME_KEEP>=75%, 65%,20%,15%
+FONT=Arial,24,F,#000000,#FFFFFF
+;Field: NAME
+TEXT="1-{(NAME)}",[NAME],<FRAME_NAME>
+FONT=Arial,14,F,#000000,#FFFFFF
+;Field: TYPE
+TEXT="1-{(TYPE)}",[TYPE],<FRAME_TYPE>
+
+IF=[type]=="attack"
+    FONT=Arial,18,F,#000000,#FFFFFF
+    ;Field: COST
+    TEXT="1-{(COST)}",[COST],<FRAME_COST>
+    TEXT="1-{(ATTACK)}","A",5%,70%,30%,15%
+    ;Field: ATTACK
+    TEXT="1-{(ATTACK)}",[ATTACK],<FRAME_ATTACK>
+    TEXT="1-{(DEFENSE)}","D",65%,70%,30%,15%
+    ;Field: DEFENSE
+    TEXT="1-{(DEFENSE)}",[DEFENSE],<FRAME_DEFENSE>
+ELSEIF=[type]=="lesson"
+    FONT=Arial,18,F,#000000,#FFFFFF
+    ;Field: CHARGE
+    TEXT=,"CHARGE:",5%,25%,70%,15%
+    TEXT="1-{(CHARGE)}",[CHARGE],<FRAME_CHARGE>
+    ;Field: SEE
+    TEXT=,"SEE:",5%,45%,70%,15%
+    TEXT="1-{(SEE)}",[SEE],<FRAME_SEE>
+    ;Field: KEEP
+    TEXT=,"SEE:",5%,65%,70%,15%
+    TEXT="1-{(KEEP)}",[KEEP],<FRAME_KEEP>
+ELSE
+
+ENDIF
+
+FONT=Arial,14,F,#000000,#FFFFFF
+TEXT=70,"CONCEALED",0,0,100%,100%
+
+DISPLAY=deck.png,1,70
+SAVE=1-70,deck.png
