@@ -1,0 +1,18 @@
+[project]
+name = "tts_generator"
+version = "0.1.0"
+description = "Generate an image file for tabletop simulator using html"
+authors = [
+    {name = "Piper Thunstrom",email = "pathunstrom@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11,<4"
+dependencies = [
+    "jinjax (>=0.58,<0.59)",
+    "pyppeteer (>=2.0.0,<3.0.0)",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
