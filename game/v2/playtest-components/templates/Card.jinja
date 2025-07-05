@@ -1,0 +1,6 @@
+{# def card #}
+{% if card.card_type == "attack" %}
+  <Attack :card="card"></Attack>
+{% else %}
+  <Lesson :card="card"></Lesson>
+{% endif %}

@@ -1,14 +1,18 @@
 name,type,cost,attack,defense,charge,see,keep,notes,test_deck_count
-Aggressive 1,attack,1,2,0,,,,Prototype all offense,6
-Defensive 1,attack,1,0,4,,,,Prototype all defense,6
-Balanced 1,attack,1,1,2,,,,Prototype balanced card,6
-Aggressive 2,attack,2,3,0,,,,,6
-Defensive 2,attack,2,1,5,,,,,6
-Balanced 2,attack,2,2,3,,,,,6
-Aggressive 3,attack,3,5,0,,,,,4
-Defensive 3,attack,3,2,5,,,,,4
-Balanced 3,attack,3,4,4,,,,,6
+Aggressive 1,attack,1,4,0,,,,Prototype all offense - Causes double chip against balanced.,6
+Defensive 1,attack,1,1,6,,,,Prototype all defense - blocks all damage of next level of aggressive.,6
+Balanced 1,attack,1,3,1,,,,Prototype balanced card - Causes 1 chip against itself.,6
+Aggressive 2,attack,2,7,1,,,,,6
+Defensive 2,attack,2,2,9,,,,,6
+Balanced 2,attack,2,5,2,,,,,6
+Aggressive 3,attack,3,10,2,,,,,4
+Defensive 3,attack,3,3,12,,,,,4
+Balanced 3,attack,3,7,3,,,,,6
 Training 1,lesson,,,,1,0,0,,4
 Training 2,lesson,,,,2,0,0,,2
 Thinking 1,lesson,,,,0,1,0,,2
 Keep 1,lesson,,,,0,0,1,,2
+Balanced 4,attack,4,9,4,,,,,1
+Aggressive 4,attack,4,13,3,,,,,1
+WWWWWWWWWWWW,attack,55,55,55,,,,,
+Starting,lesson,,,,1,2,1,Physical reminder of rules.,

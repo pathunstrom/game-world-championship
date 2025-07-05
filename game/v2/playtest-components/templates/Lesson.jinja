@@ -1,0 +1,11 @@
+{# def card: Card #}
+<div class="card lesson">
+  <h2 class="{{ "long" if card.name|len >= 12 else ""}}">{{ card.name }}</h2>
+  <p class="charge label">Charge:</p>
+  <p class="charge value">{{ card.charge }}</p>
+  <p class="see label">See:</p>
+  <p class="see value">{{ card.see }}</p>
+  <p class="keep label">Keep:</p>
+  <p class="keep value">{{ card.keep }}</p>
+  <p class="card-type">{{ card.card_type }}</p>
+</div>

@@ -1,0 +1,10 @@
+{# def card: Card #}
+<div class="card attack">
+  <p class="cost">{{ card.cost }}</p>
+  <h2 class="{{ "long" if card.name|len >= 12 else ""}}">{{ card.name }}</h2>
+  <p class="attack label">A</p>
+  <p class="attack value">{{ card.attack }}</p>
+  <p class="defense label">D</p>
+  <p class="defense value">{{ card.defense }}</p>
+  <p class="card-type">{{ card.card_type }}</p>
+</div>
