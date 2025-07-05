@@ -121,7 +121,11 @@ Put it into the attack zone.
 
 #### Pay costs
 
-Pay energy equal to the cost of the card.
+You may choose whether or not to pay for the attack.
+
+If you do, pay energy equal to its cost in the top left corner.
+
+If you do not, skip to the End Step.
 
 #### Resolve Damage
 
@@ -139,8 +143,8 @@ Otherwise, the active player passes to the opponent, who takes their own combat 
 
 ### Training Phase
 
-Each play reveals the top card of their training deck and places it in their training zone.
-Lessons can increase your charge, look, and keep values.
+Each player may pay 1 energy per Lesson in their Training Zone.
+If they do, they may flip the top card of their training pile into their Training Zone.
 
 ### Refresh Phase
 
