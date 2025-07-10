@@ -5,7 +5,7 @@ This initial version is a mystery meat meant to validate core concepts.
 
 ## Game Setup
 
-![table-layout-visual](table-layout.png)
+![table-layout-visual](table-layout-rules.png)
 
 To begin, each player will need a test deck.
 You will also need a die or dice and a first player token.
@@ -90,7 +90,7 @@ They may then keep 1 card + 1 for each keep on lessons in the training zone.
 ### Combat Phase
 
 First, the first player gets to decide if you enter combat.
-If they choose to not engage, this step ends.
+If they choose to not engage, this phase ends.
 
 If they choose to start, they become the active player.
 
