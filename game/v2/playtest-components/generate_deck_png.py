@@ -27,6 +27,10 @@ catalog = jinjax.Catalog(
 
 catalog.add_folder("./templates")
 
+CARD_WIDTH = int(2.5 * 300)
+CARD_HEIGHT = int(3.5 * 300)
+RESOLUTION = CARD_WIDTH * 10, CARD_HEIGHT * 7
+
 
 class CardType(StrEnum):
     ATTACK = auto()
@@ -93,14 +97,14 @@ async def main() -> None:
         raise SystemExit(2)
 
     cards = [Card.make_from_csv_row(row) for row in card_rows]
-    html = catalog.render("Layout", cards=cards)
+    html = catalog.render("Layout", cards=cards, width=RESOLUTION[0], height=RESOLUTION[1], row_width=CARD_WIDTH, row_height=CARD_HEIGHT)
     if args.debug:
         with open("debug.html", "w") as f:
             f.write(html)
 
     browser = await launch()
     page = await browser.newPage()
-    await page.setViewport({"width": 4096, "height": 4096, "deviceScaleFactor": 1})
+    await page.setViewport({"width": RESOLUTION[0], "height": RESOLUTION[1], "deviceScaleFactor": 1})
     await page.setContent(html)
     await page.screenshot({'path': args.output_path})
     await browser.close()

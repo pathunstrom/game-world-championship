@@ -1,0 +1,6 @@
+
+Windows PS:
+
+`$env:PYPPETEER_CHROMIUM_REVISION=1484684`
+
+
